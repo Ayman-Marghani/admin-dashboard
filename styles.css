@@ -1,0 +1,151 @@
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+input, button, textarea, select {
+  font: inherit;
+}
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+#root, #__next {
+  isolation: isolate;
+}
+
+/* Additional resets */
+* {
+  padding: 0;
+}
+
+ul {
+	list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Custom properties */
+:root {
+  /* Colors */
+  --sidebar-bg-color: #0284c7;
+  --main-content-bg-color: #e2e8f0;
+
+  /* Gaps */
+  --sidebar-gap: 24px;
+  /* --sidebar-links-gap: ; */
+
+  /* Icons width */
+  --icon-width: 24px;
+  --user-icon-width: 48px;
+}
+
+/* Styles */
+body {
+  font-family: 'Roboto';
+  display: grid;
+  grid-template: 1fr 4fr / 1fr 5fr;
+}
+
+/* Sidebar */
+.sidebar {
+  grid-row: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sidebar-gap);
+  background-color: var(--sidebar-bg-color);
+}
+
+.sidebar-heading,
+.sidebar-link a {
+  color: #fff;
+}
+
+.sidebar-heading,
+.sidebar-link
+ {
+  display: flex;
+  /* gap: */
+}
+
+.sidebar-links {
+  display: grid;
+  gap: calc(var(--sidebar-gap) / 4);
+}
+
+/* Icons */
+.dashboard-icon {
+  width: calc(var(--icon-width) * 1.5);
+  height: calc(var(--icon-width) * 1.5);
+}
+
+.sidebar-link-icon,
+.header-icon,
+.project-icons > svg {
+  width: var(--icon-width);
+  height: var(--icon-width);
+}
+
+.header-user-icon,
+.trending-profile-img {
+  width: var(--user-icon-width);
+}
+
+.header-sec2 > .header-user-icon {
+  width: calc(var(--user-icon-width) * 1.5);
+}
+
+
+
+
+
+/* Header */
+.header {
+  
+}
+
+.header-sec1,
+.header-sec2 {
+  display: flex;
+}
+
+/* Main content */
+.main-content {
+  background-color: var(--main-content-bg-color);
+
+  display: grid;
+  grid-template: 1fr 1fr / 3fr 1fr;
+}
+
+.projects-section {
+  grid-row: 1 / -1;
+}
+
+.projects-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.project-icons {
+  display: flex;
+}
+
+
+.trending-card {
+  display: flex;
+}
