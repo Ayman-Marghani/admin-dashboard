@@ -14,7 +14,6 @@ body {
 }
 img, picture, video, canvas, svg {
   display: block;
-  max-width: 100%;
 }
 input, button, textarea, select {
   font: inherit;
@@ -42,55 +41,41 @@ a {
 /* Custom properties */
 :root {
   /* Colors */
-  --sidebar-bg-color: #0284c7;
-  --main-content-bg-color: #e2e8f0;
+  --blue: #0284c7;
+  --grey: #e2e8f0;
 
   /* Gaps */
-  --sidebar-gap: 24px;
-  /* --sidebar-links-gap: ; */
+  --sidebar-gap: 60px;
+  --sidebar-heading-gap: 18px;
+  --sidebar-link-gap: 24px;
+
+  /* padding */
+  --sidebar-padding: 22px;
 
   /* Icons width */
   --icon-width: 24px;
   --user-icon-width: 48px;
 }
 
-/* Styles */
+/* General Styles */
 body {
-  font-family: 'Roboto';
+  font-family: Arial, Helvetica, sans-serif;
   display: grid;
-  grid-template: 1fr 4fr / 1fr 5fr;
+  grid-template: 1fr 4fr / 1fr 4fr;
 }
 
-/* Sidebar */
-.sidebar {
-  grid-row: 1 / -1;
-  display: flex;
-  flex-direction: column;
-  gap: var(--sidebar-gap);
-  background-color: var(--sidebar-bg-color);
+h2 {
+  font-size: 26px;
 }
 
-.sidebar-heading,
-.sidebar-link a {
-  color: #fff;
-}
+h3 {
 
-.sidebar-heading,
-.sidebar-link
- {
-  display: flex;
-  /* gap: */
-}
-
-.sidebar-links {
-  display: grid;
-  gap: calc(var(--sidebar-gap) / 4);
 }
 
 /* Icons */
 .dashboard-icon {
-  width: calc(var(--icon-width) * 1.5);
-  height: calc(var(--icon-width) * 1.5);
+  width: calc(var(--icon-width) * 2);
+  height: calc(var(--icon-width) * 2);
 }
 
 .sidebar-link-icon,
@@ -103,29 +88,81 @@ body {
 .header-user-icon,
 .trending-profile-img {
   width: var(--user-icon-width);
+  height: var(--user-icon-width);
 }
 
 .header-sec2 > .header-user-icon {
   width: calc(var(--user-icon-width) * 1.5);
+  height: calc(var(--user-icon-width) * 1.5);
 }
 
+/* Sidebar */
+.sidebar {
+  grid-row: 1 / -1;
 
+  display: flex;
+  flex-direction: column;
+  gap: var(--sidebar-gap);
 
+  padding: var(--sidebar-padding);
+  background-color: var(--blue);
+}
 
+.sidebar-heading,
+.sidebar-link a {
+  color: #fff;
+  font-weight: 800;
+}
+
+.sidebar-heading {
+  display: flex;
+  gap: calc(var(--sidebar-link-gap) / 2);
+  align-items: center;
+}
+
+.sidebar-links {
+  display: grid;
+  gap: calc(var(--sidebar-gap) / 4);
+  padding-left: 6px;
+}
+
+.sidebar-link {
+  display: flex;
+  gap: var(--sidebar-link-gap);
+}
+
+.sidebar-link a {
+  font-size: 20px;
+}
 
 /* Header */
 .header {
-  
+  padding: 22px;
 }
 
 .header-sec1,
-.header-sec2 {
+.header-sec2,
+.header-subsection {
   display: flex;
+  align-items: center;
+}
+
+.header-sec1 {
+  justify-content: space-between;
+}
+
+input {
+  background-color: var(--grey);
+
+  border: none;
+  border-radius: 20px;
+  height: 30px;
+  flex-basis: 600px;
 }
 
 /* Main content */
 .main-content {
-  background-color: var(--main-content-bg-color);
+  background-color: var(--grey);
 
   display: grid;
   grid-template: 1fr 1fr / 3fr 1fr;
