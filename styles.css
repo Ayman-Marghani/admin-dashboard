@@ -46,11 +46,8 @@ a {
 
   /* Gaps */
   --sidebar-gap: 60px;
-  --sidebar-heading-gap: 18px;
-  --sidebar-link-gap: 24px;
 
   /* padding */
-  --sidebar-padding: 22px;
 
   /* Icons width */
   --icon-width: 24px;
@@ -113,7 +110,7 @@ h3 {
   flex-direction: column;
   gap: var(--sidebar-gap);
 
-  padding: var(--sidebar-padding);
+  padding: 22px;
   background-color: var(--blue);
 }
 
@@ -205,12 +202,19 @@ input {
 /* Main content */
 .main-content {
   background-color: var(--grey);
-  padding: 20px;
+  padding: 38px 32px 38px 20px;
 
   display: grid;
   grid-template: 1fr 1fr / 3fr 1fr;
+  gap: 24px;
 }
 
+.main-content h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+/* Projects section */
 .projects-section {
   grid-row: 1 / -1;
 }
@@ -218,14 +222,49 @@ input {
 .projects-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1rem;
+  grid-template-rows: repeat(3, 1fr);
+  grid-auto-rows: 1fr;
+  gap: 24px;
+}
+
+.project-card {
+  border-left: 8px solid #fbbf24;
+  padding: 36px 18px;
+
+  display: grid;
+  align-content: space-between;
+  gap: 12px;
+}
+
+.project-title {
+  font-weight: 800;
+  font-size: 18px
+}
+
+.project-description {
+  line-height: 1;
+  color: gray;
 }
 
 .project-icons {
   display: flex;
+  justify-content: flex-end;
+  gap: 32px;
 }
 
 
+.project-card,
+.announcements-cards,
+.trending-cards {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 3px 3px 3px lightgray;
+}
+
+/* Announcements section */
+
+
+/* Trending section */
 .trending-card {
   display: flex;
 }
